@@ -1,25 +1,46 @@
 <!DOCTYPE html>
+<!Importo la funcionalidad de thymeleaf con el :th, como una libreria>
+	<html xmlns:th="http://www.thymeleaf.org">
 
-<html lang="en">
+	<head>
 
-<head>
+		<meta charset="UTF-8">
 
-	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Buscar Todos</title>
-
-</head>
-
-
-<body>
-<h1>  HOLA </h1>
-<p></p>
-
-<h1>  MUNDO </h1>
+		<title>Buscar Todos</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	</head>
 
 
-</body>
+	<hbody>
+		<h1> HOLA </h1>
+		<p></p>
+		<h1> MUNDO </h1>
+		<table class="table table-success table-striped">
+			<thead>
+				<!Abro fila>
+					<tr>
+						<!titulos columnas>
+							<th>ID</th>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Cédula</th>
+					</tr>
+			</thead>
+			<hbody>
+				<!forEach donde mandonombre del modelo en controller (propietarios)>
+					<tr th:each="propietario:${propietarios}">
+						<td th:text="${propietario.id}">
+						<td th:text="${propietario.nombre}">
+						<td th:text="${propietario.apellido}">
+						<td th:text="${propietario.cedula}">
+						</td>
+					</tr>
 
-</html>
+			</hbody>
+		</table>
+		</body>
+
+	</html>
